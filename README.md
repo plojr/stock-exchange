@@ -10,8 +10,10 @@ With the API, it's possible to have some information:
 - The variation of a stock's price, given a period of time;
 - Etc.
 
-For this project, I'm coding in Python, using Visual Studio Code. The data are stored in a PostgreSQL database. And, for the routes, I'm using Flask framework.
+For this project, I'm coding in Python, using Visual Studio Code under a Linux distribution. The data are stored in a PostgreSQL database. And, for the routes, I'm using Flask framework.
 
 Prerequisite:
 - It must be set environment variables for database, user and password, and they're called POSTGRESQL_DATABASE, POSTGRESQL_USER and POSTGRESQL_PASSWORD, respectively.
 - I'm using flask framework, so it must be installed via pip.
+
+In order to run this project on development environment, go to the project folder, and run "flask run".
