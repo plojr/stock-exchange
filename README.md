@@ -11,3 +11,7 @@ With the API, it's possible to have some information:
 - etc.
 
 For this project, I'm coding in Python, using Visual Studio Code. The data are stored in a PostgreSQL database. And, for the routes, I'm using Flask framework.
+
+Prerequisite:
+- In order to store the database password, I chose to set an environment variable called POSTGRESQL_PASSWORD and then use os.environ to get its value.
+- I'm using flask framework, so it must be installed via pip.
