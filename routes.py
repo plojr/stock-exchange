@@ -3,30 +3,30 @@ import adjusted_prices_dao
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def root():
-    return render_template('html/index.html')
+    return render_template("html/index.html")
 
-@app.route('/about')
+@app.route("/about")
 def about():
     return root()
 
-@app.route('/price')
+@app.route("/price")
 def get_price():
-    ticker = request.args.get('ticker', type = str)
-    date = request.args.get('date', type = str)
+    ticker = request.args.get("ticker", type = str)
+    date = request.args.get("date", type = str)
     return str(adjusted_prices_dao.get_closing_price(ticker, date))
 
-@app.route('/volume')
+@app.route("/volume")
 def get_volume():
-    ticker = request.args.get('ticker', type = str)
-    date = request.args.get('date', type = str)
+    ticker = request.args.get("ticker", type = str)
+    date = request.args.get("date", type = str)
     return str(adjusted_prices_dao.get_volume(ticker, date))
 
 @app.route('/variation')
 def get_variation():
-    ticker = request.args.get('ticker', type = str)
-    initial_date = request.args.get('initial_date', type = str)
-    finish_date = request.args.get('finish_date', type = str)
+    ticker = request.args.get("ticker", type = str)
+    initial_date = request.args.get("initial_date", type = str)
+    finish_date = request.args.get("finish_date", type = str)
     return str(adjusted_prices_dao.get_variation(ticker, initial_date, finish_date))
 

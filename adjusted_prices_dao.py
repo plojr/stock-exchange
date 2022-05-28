@@ -1,8 +1,11 @@
 import database
+import validation
 
 INVALID_TICKER_DATE = "Not a valid ticker or date"
 
 def get_closing_price(ticker, date):
+    if validation.is_valid_date(date) == False:
+        return INVALID_TICKER_DATE
     global INVALID_TICKER_DATE
     conn, cursor = database.get_cursor()
     cursor.execute("SELECT price "\
@@ -15,6 +18,8 @@ def get_closing_price(ticker, date):
     return result[0]
 
 def get_volume(ticker, date):
+    if validation.is_valid_date(date) == False:
+        return INVALID_TICKER_DATE
     global INVALID_TICKER_DATE
     conn, cursor = database.get_cursor()
     cursor.execute("SELECT volume "\
@@ -27,6 +32,10 @@ def get_volume(ticker, date):
     return result[0]
 
 def get_variation(ticker, initial_date, finish_date):
+    if validation.is_valid_date(initial_date) == False:
+        return INVALID_TICKER_DATE
+    if validation.is_valid_date(finish_date) == False:
+        return INVALID_TICKER_DATE
     global INVALID_TICKER_DATE
     price1 = get_closing_price(ticker, initial_date)
     if price1 == INVALID_TICKER_DATE:

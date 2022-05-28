@@ -10,10 +10,10 @@ def get_cursor():
 	if connected is True:
 		return conn, conn.cursor()
 	conn = psycopg2.connect(
-		host='localhost',
-		database=os.environ['POSTGRESQL_DATABASE'],
-		user=os.environ['POSTGRESQL_USER'],
-		password=os.environ['POSTGRESQL_PASSWORD']
+		host = "localhost",
+		database = os.environ["POSTGRESQL_DATABASE"],
+		user = os.environ["POSTGRESQL_USER"],
+		password = os.environ["POSTGRESQL_PASSWORD"]
 	)
 	connected = True
 	return conn, conn.cursor()
