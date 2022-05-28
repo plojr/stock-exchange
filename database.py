@@ -11,8 +11,8 @@ def get_cursor():
 		return conn, conn.cursor()
 	conn = psycopg2.connect(
 		host='localhost',
-		database='postgres',
-		user='postgres',
+		database=os.environ['POSTGRESQL_DATABASE'],
+		user=os.environ['POSTGRESQL_USER'],
 		password=os.environ['POSTGRESQL_PASSWORD']
 	)
 	connected = True
