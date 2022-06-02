@@ -22,36 +22,4 @@ For this project, I'm coding in Python, using Visual Studio Code under a Linux d
 
 ## Database information
 DBMS: PostgreSQL
-Database: postgres
-Schema: stock_exchange
-Tables:
-- adjusted_prices:
-
-  Column  |       Type       | 
-  
-----------+------------------+
-
- id       | integer          |
- 
- stock_id | integer          |
- 
- price    | integer          |
- 
- open     | integer          |
- 
- high     | integer          |
- 
- low      | integer          |
- 
- volume   | double precision |
- 
- change   | double precision |
- 
- date     | date             |
-
-- stock:
-
- Column |       Type        | 
---------+-------------------+
- id     | integer           |
- ticker | character varying |
+Database, schema and tables: please check sql folder.
