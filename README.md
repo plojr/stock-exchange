@@ -28,15 +28,25 @@ Tables:
 - adjusted_prices:
 
   Column  |       Type       | 
+  
 ----------+------------------+
+
  id       | integer          |
+ 
  stock_id | integer          |
+ 
  price    | integer          |
+ 
  open     | integer          |
+ 
  high     | integer          |
+ 
  low      | integer          |
+ 
  volume   | double precision |
+ 
  change   | double precision |
+ 
  date     | date             |
 
 - stock:
