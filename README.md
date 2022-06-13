@@ -3,6 +3,7 @@
 ## Status
 Not finished yet.
 
+## Summary
 This project is for learning purposes only.
 
 It’s a very simple API in order to access a database where is located data about stock prices, volumes of shares, etc.
