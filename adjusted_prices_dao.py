@@ -7,10 +7,10 @@ def get_closing_price(ticker, date):
     if validation.is_valid_date(date) == False:
         return INVALID_TICKER_DATE
     global INVALID_TICKER_DATE
-    conn, cursor = database.get_cursor()
+    conn, cursor = database.get_connection()
     cursor.execute("SELECT price "\
-                   "FROM stock_exchange.adjusted_prices ap "\
-                   "INNER JOIN stock_exchange.stock s ON s.id = ap.stock_id "\
+                   "FROM adjusted_prices ap "\
+                   "INNER JOIN stock s ON s.id = ap.stock_id "\
                    "WHERE s.ticker = %s AND ap.date = %s", (ticker, date))
     result = cursor.fetchone()
     if result is None:
@@ -21,10 +21,10 @@ def get_volume(ticker, date):
     if validation.is_valid_date(date) == False:
         return INVALID_TICKER_DATE
     global INVALID_TICKER_DATE
-    conn, cursor = database.get_cursor()
+    conn, cursor = database.get_connection()
     cursor.execute("SELECT volume "\
-                   "FROM stock_exchange.adjusted_prices ap "\
-                   "INNER JOIN stock_exchange.stock s ON s.id = ap.stock_id "\
+                   "FROM adjusted_prices ap "\
+                   "INNER JOIN stock s ON s.id = ap.stock_id "\
                    "WHERE s.ticker = %s AND ap.date = %s", (ticker, date))
     result = cursor.fetchone()
     if result is None:
