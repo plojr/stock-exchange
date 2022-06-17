@@ -26,4 +26,4 @@ For this project, I'm coding in Python, using Visual Studio Code under a Linux d
 
 ## Database information
 DBMS: PostgreSQL
-Database, schema and tables: please check sql folder.
+Database, schema and tables: please refer to sql folder.
